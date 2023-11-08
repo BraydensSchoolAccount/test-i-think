@@ -43,7 +43,7 @@ def triangle_area(height, base):
         base (float): The width of the base of the triangle
     returns area of the triangle
     """
-    pass
+    return (height * base / 2)
 
 
 def add_all(*numbers):
@@ -52,4 +52,23 @@ def add_all(*numbers):
         numbers (floats, multiple): The numbers needed to add
     returns all the numbers added
     """
-    pass
+    answer = 0
+    for number in numbers:
+        answer += number
+    return answer
+
+square_width = float(input("What's the width of the rectangle? >  "))
+square_height = float(input("What's the height of the rectangle? >  "))
+print(square_area(square_width, square_height))
+
+radius = float(input("What's the radius of the circle? >  "))
+print(circle_area(radius))
+
+triangle_base = float(input("What's the base of the triangle? >  "))
+triangle_height = float(input("What's the height of the triangle? >  "))
+print(square_area(triangle_base, triangle_height))
+
+numbers_to_add = input("What numbers do you want to add? Separate with commas (,) >  ").split(",")
+for number in numbers_to_add:
+    numbers_to_add[numbers_to_add.index(number)] = float(number)
+print(add_all(*numbers_to_add))
